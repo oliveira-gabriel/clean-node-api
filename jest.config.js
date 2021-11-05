@@ -1,5 +1,5 @@
 
-export default {
+module.exports = {
   roots: ['<rootDir>/src'],
   // Indicates whether the coverage information should be collected while executing the test
   collectCoverage: false,
