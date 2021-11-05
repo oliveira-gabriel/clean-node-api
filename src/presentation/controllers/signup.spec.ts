@@ -1,13 +1,15 @@
 import { SignUpController } from './signup'
 import { MissingParamError } from '../errors/missing-param-error'
 import { InvalidParamError } from '../errors/invalid-param-error'
-import { EmailValidator } from '../errors/email-validator'
+import { EmailValidator } from '../protocols/email-validator'
 
 interface SutTypes {
   sut: SignUpController
   emailValidatorStub: EmailValidator
 }
 const makeSut = (): SutTypes => {
+  // Stub is a type of mock, test double
+  // Have other types of mock like: spy, stub, faker
   class EmailValidatorStub implements EmailValidator {
     isValid (email: string): boolean {
       return true
